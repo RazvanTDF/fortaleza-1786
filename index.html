@@ -1,0 +1,1131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fortaleza 1786 — Oiartzun</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&family=Lexend+Zetta:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f5f0e8;
+    --dark: #1a1612;
+    --stone: #8c7d6e;
+    --terracotta: #b85c38;
+    --gold: #c9a84c;
+    --light: #faf7f2;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  header {
+    background: #2d2118;
+    color: #ffffff;
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  header::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(201,168,76,0.04) 40px,
+      rgba(201,168,76,0.04) 41px
+    );
+  }
+
+  .header-year {
+    font-family: 'Lexend Zetta', sans-serif;
+    font-size: clamp(3rem, 10vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: #ffffff;
+    margin-bottom: 0.2rem;
+    position: relative;
+    line-height: 1;
+  }
+
+  .header-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    position: relative;
+    color: rgba(255,255,255,0.55);
+    margin-top: 0.6rem;
+  }
+
+  .header-fortaleza {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.6rem, 5vw, 2.8rem);
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 0.04em;
+    color: #ffffff;
+    position: relative;
+    display: block;
+    margin-top: 0.1rem;
+  }
+
+  .header-location {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-top: 0.75rem;
+    position: relative;
+  }
+
+  .header-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 1.5rem auto 0;
+    position: relative;
+  }
+
+  /* LANG SWITCHER */
+  .lang-bar {
+    background: var(--light);
+    border-bottom: 1px solid rgba(140,125,110,0.2);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0.75rem 1.25rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--stone);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .lang-btn:hover { color: var(--dark); }
+
+  .lang-btn.active {
+    color: var(--terracotta);
+    border-bottom-color: var(--terracotta);
+  }
+
+  /* NAV CATEGORIES */
+  .cat-nav {
+    display: flex;
+    overflow-x: auto;
+    gap: 0;
+    padding: 0 1rem;
+    background: var(--light);
+    border-bottom: 1px solid rgba(140,125,110,0.15);
+    scrollbar-width: none;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cat-nav::-webkit-scrollbar { display: none; }
+
+  .cat-nav-btn {
+    background: none;
+    border: none;
+    padding: 0.9rem 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--stone);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+
+  .cat-nav-btn:hover { color: var(--dark); }
+  .cat-nav-btn.active { color: var(--dark); border-bottom-color: var(--dark); }
+
+  /* MAIN */
+  main {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 4rem;
+  }
+
+  /* SECTION */
+  .menu-section { margin-bottom: 3rem; }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .section-header::before,
+  .section-header::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: rgba(140,125,110,0.25);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--dark);
+  }
+
+  /* ITEM */
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(140,125,110,0.12);
+  }
+
+  .menu-item:last-child { border-bottom: none; }
+
+  .item-info { flex: 1; }
+
+  .item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--dark);
+    margin-bottom: 0.2rem;
+  }
+
+  .item-desc {
+    font-size: 0.8rem;
+    color: var(--stone);
+    line-height: 1.5;
+    margin-bottom: 0.35rem;
+  }
+
+  .item-allergens {
+    font-size: 0.68rem;
+    color: var(--terracotta);
+    letter-spacing: 0.04em;
+  }
+
+  .item-allergens span {
+    display: inline-block;
+    background: rgba(184,92,56,0.08);
+    padding: 1px 6px;
+    border-radius: 2px;
+    margin: 1px 2px 1px 0;
+  }
+
+  .item-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark);
+    white-space: nowrap;
+    padding-top: 2px;
+  }
+
+  /* ALLERGEN LEGEND */
+  .allergen-legend {
+    background: var(--light);
+    border: 1px solid rgba(140,125,110,0.2);
+    border-radius: 4px;
+    padding: 1.25rem;
+    margin-top: 3rem;
+  }
+
+  .allergen-legend-title {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.75rem;
+  }
+
+  .allergen-legend-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+
+  .allergen-legend-item {
+    font-size: 0.72rem;
+    color: var(--stone);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .allergen-legend-item .dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--terracotta);
+    flex-shrink: 0;
+  }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    background: #2d2118;
+    color: var(--stone);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  footer .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  /* hidden sections */
+  .menu-section.hidden { display: none; }
+  .lang-content { display: none; }
+  .lang-content.active { display: block; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-year">1786</div>
+  <span class="header-fortaleza">Fortaleza</span>
+  <div class="header-name">Restaurante · Oiartzun</div>
+  <div class="header-location">Gipuzkoa · País Vasco · España</div>
+  <div class="header-divider"></div>
+</header>
+
+<!-- LANG SWITCHER -->
+<div class="lang-bar">
+  <button class="lang-btn active" onclick="setLang('es')">ES</button>
+  <button class="lang-btn" onclick="setLang('eu')">EU</button>
+  <button class="lang-btn" onclick="setLang('en')">EN</button>
+  <button class="lang-btn" onclick="setLang('fr')">FR</button>
+</div>
+
+<!-- ===================== ESPAÑOL ===================== -->
+<div class="lang-content active" id="lang-es">
+
+  <div class="cat-nav">
+    <button class="cat-nav-btn active" onclick="filterCat('es','all',this)">Todo</button>
+    <button class="cat-nav-btn" onclick="filterCat('es','pintxos',this)">Pintxos</button>
+    <button class="cat-nav-btn" onclick="filterCat('es','entrantes',this)">Entrantes</button>
+    <button class="cat-nav-btn" onclick="filterCat('es','principales',this)">Principales</button>
+    <button class="cat-nav-btn" onclick="filterCat('es','postres',this)">Postres</button>
+    <button class="cat-nav-btn" onclick="filterCat('es','bebidas',this)">Bebidas</button>
+  </div>
+
+  <main>
+
+    <div class="menu-section" data-cat="pintxos">
+      <div class="section-header"><span class="section-title">Pintxos</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Pintxo de bacalao con pil-pil</div>
+          <div class="item-desc">Bacalao confitado sobre pan tostado con salsa pil-pil tradicional</div>
+          <div class="item-allergens"><span>Pescado</span><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Gilda clásica</div>
+          <div class="item-desc">Anchoa, guindilla y oliva en brocheta, receta original vasca</div>
+          <div class="item-allergens"><span>Pescado</span></div>
+        </div>
+        <div class="item-price">2,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Pintxo de txistorra</div>
+          <div class="item-desc">Txistorra vasca a la plancha sobre pan de hogaza</div>
+          <div class="item-allergens"><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Champiñones al ajillo</div>
+          <div class="item-desc">Champiñones salteados con ajo y perejil, sin gluten</div>
+          <div class="item-allergens"><span>Sin alérgenos</span></div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="entrantes">
+      <div class="section-header"><span class="section-title">Entrantes</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Ensalada de temporada</div>
+          <div class="item-desc">Verduras de huerta local con vinagreta de txakoli</div>
+          <div class="item-allergens"><span>Sin alérgenos</span></div>
+        </div>
+        <div class="item-price">8,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Croquetas de jamón ibérico</div>
+          <div class="item-desc">Croquetas caseras, rebozadas, con jamón ibérico de bellota</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lácteos</span><span>Huevos</span></div>
+        </div>
+        <div class="item-price">9,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Foie a la plancha con manzana</div>
+          <div class="item-desc">Foie gras de pato con compota de manzana y pan brioche</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lácteos</span></div>
+        </div>
+        <div class="item-price">16,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="principales">
+      <div class="section-header"><span class="section-title">Platos Principales</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Merluza a la vasca</div>
+          <div class="item-desc">Merluza fresca en salsa verde con almejas y espárragos</div>
+          <div class="item-allergens"><span>Pescado</span><span>Moluscos</span></div>
+        </div>
+        <div class="item-price">22,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txuleta de buey</div>
+          <div class="item-desc">Chuletón de buey a la brasa, mínimo 1 kg, con pimientos de Guernica</div>
+          <div class="item-allergens"><span>Sin alérgenos</span></div>
+        </div>
+        <div class="item-price">38,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Kokotxas al pil-pil</div>
+          <div class="item-desc">Kokotxas de bacalao en salsa pil-pil, receta tradicional</div>
+          <div class="item-allergens"><span>Pescado</span></div>
+        </div>
+        <div class="item-price">24,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Risotto de setas del bosque</div>
+          <div class="item-desc">Setas de temporada, parmesano, trufa negra — opción vegetariana</div>
+          <div class="item-allergens"><span>Lácteos</span><span>Gluten</span></div>
+        </div>
+        <div class="item-price">18,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="postres">
+      <div class="section-header"><span class="section-title">Postres</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Tarta vasca</div>
+          <div class="item-desc">Pastel vasco con crema pastelera, receta de la abuela</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lácteos</span><span>Huevos</span></div>
+        </div>
+        <div class="item-price">6,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Cuajada con miel</div>
+          <div class="item-desc">Cuajada artesana de oveja latxa con miel de Bizkaia</div>
+          <div class="item-allergens"><span>Lácteos</span></div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Coulant de chocolate</div>
+          <div class="item-desc">Bizcocho de chocolate con interior fundente y helado de vainilla</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lácteos</span><span>Huevos</span></div>
+        </div>
+        <div class="item-price">7,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="bebidas">
+      <div class="section-header"><span class="section-title">Bebidas</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txakoli Getariako</div>
+          <div class="item-desc">Vino blanco DO Getariako Txakolina, copa / botella</div>
+          <div class="item-allergens"><span>Sulfitos</span></div>
+        </div>
+        <div class="item-price">3,50 € / 18 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Sidra natural</div>
+          <div class="item-desc">Sagardoa artesana de Gipuzkoa, escanciada</div>
+          <div class="item-allergens"><span>Sulfitos</span></div>
+        </div>
+        <div class="item-price">2,80 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Agua / Agua con gas</div>
+          <div class="item-desc">Botella 50cl</div>
+          <div class="item-allergens"></div>
+        </div>
+        <div class="item-price">1,80 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Café / Cortado / Americano</div>
+          <div class="item-desc">Café de especialidad, origen único</div>
+          <div class="item-allergens"><span>Lácteos</span></div>
+        </div>
+        <div class="item-price">1,80 €</div>
+      </div>
+    </div>
+
+    <div class="allergen-legend">
+      <div class="allergen-legend-title">Información sobre alérgenos — Reglamento UE 1169/2011</div>
+      <div class="allergen-legend-grid">
+        <div class="allergen-legend-item"><span class="dot"></span>Gluten (cereales)</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Crustáceos</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Huevos</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Pescado</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Cacahuetes</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Soja</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Lácteos</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Frutos de cáscara</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Apio</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Mostaza</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sésamo</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sulfitos</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Altramuces</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Moluscos</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===================== EUSKARA ===================== -->
+<div class="lang-content" id="lang-eu">
+
+  <div class="cat-nav">
+    <button class="cat-nav-btn active" onclick="filterCat('eu','all',this)">Guztia</button>
+    <button class="cat-nav-btn" onclick="filterCat('eu','pintxos',this)">Pintxoak</button>
+    <button class="cat-nav-btn" onclick="filterCat('eu','entrantes',this)">Sarrerak</button>
+    <button class="cat-nav-btn" onclick="filterCat('eu','principales',this)">Platerak</button>
+    <button class="cat-nav-btn" onclick="filterCat('eu','postres',this)">Postreak</button>
+    <button class="cat-nav-btn" onclick="filterCat('eu','bebidas',this)">Edariak</button>
+  </div>
+
+  <main>
+
+    <div class="menu-section" data-cat="pintxos">
+      <div class="section-header"><span class="section-title">Pintxoak</span></div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Bakailao pintxoa pil-pilekin</div>
+          <div class="item-desc">Ogi gainean konfitaturiko bakailaoa pil-pil saltsa tradizionalarekin</div>
+          <div class="item-allergens"><span>Arraina</span><span>Garia</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Gilda klasikoa</div>
+          <div class="item-desc">Antxoa, piparrak eta olibak brotxetan, Euskal Herriko errezeta originala</div>
+          <div class="item-allergens"><span>Arraina</span></div>
+        </div>
+        <div class="item-price">2,00 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txistorra pintxoa</div>
+          <div class="item-desc">Euskal txistorra plantxan ogi gainean</div>
+          <div class="item-allergens"><span>Garia</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Perretxikoak berakatzekin</div>
+          <div class="item-desc">Perretxikoak beratzarekin eta perrexilarekin salteatuak</div>
+          <div class="item-allergens"><span>Alergenorik gabe</span></div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="entrantes">
+      <div class="section-header"><span class="section-title">Sarrerak</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Denboraldiko entsalada</div>
+          <div class="item-desc">Bertako barazki freskoak txakoli binagretearekin</div>
+          <div class="item-allergens"><span>Alergenorik gabe</span></div>
+        </div>
+        <div class="item-price">8,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Urdaiazpiko kroketak</div>
+          <div class="item-desc">Etxeko kroketak urdaiazpiko iberikoaz beteak</div>
+          <div class="item-allergens"><span>Garia</span><span>Esnekiak</span><span>Arrautzak</span></div>
+        </div>
+        <div class="item-price">9,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="principales">
+      <div class="section-header"><span class="section-title">Plater Nagusiak</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Legatza euskal eran</div>
+          <div class="item-desc">Legatz freskoa saltsa berdean, txirlekin eta zainzuriekin</div>
+          <div class="item-allergens"><span>Arraina</span><span>Moluskuak</span></div>
+        </div>
+        <div class="item-price">22,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Idiskiaren txuleta</div>
+          <div class="item-desc">Brasatan egindako txuleta, gutxienez 1 kg, Gernikako piperrekin</div>
+          <div class="item-allergens"><span>Alergenorik gabe</span></div>
+        </div>
+        <div class="item-price">38,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Bakailaoko kokotxak pil-pilean</div>
+          <div class="item-desc">Kokotxak pil-pil saltsan, errezeta tradizionala</div>
+          <div class="item-allergens"><span>Arraina</span></div>
+        </div>
+        <div class="item-price">24,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="postres">
+      <div class="section-header"><span class="section-title">Postreak</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Euskal tarta</div>
+          <div class="item-desc">Pastel baskoa gozokiarekin, amonaren errezeta</div>
+          <div class="item-allergens"><span>Garia</span><span>Esnekiak</span><span>Arrautzak</span></div>
+        </div>
+        <div class="item-price">6,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Mamia eztiarekin</div>
+          <div class="item-desc">Latxako ardi mamia Bizkaiko eztiarekin</div>
+          <div class="item-allergens"><span>Esnekiak</span></div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="bebidas">
+      <div class="section-header"><span class="section-title">Edariak</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Getariako Txakolina</div>
+          <div class="item-desc">Ardo zuria DO Getariako Txakolina, kopa / botila</div>
+          <div class="item-allergens"><span>Sulfitoak</span></div>
+        </div>
+        <div class="item-price">3,50 € / 18 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Sagardoa</div>
+          <div class="item-desc">Gipuzkoako sagardo naturala, eskantziatu</div>
+          <div class="item-allergens"><span>Sulfitoak</span></div>
+        </div>
+        <div class="item-price">2,80 €</div>
+      </div>
+    </div>
+
+    <div class="allergen-legend">
+      <div class="allergen-legend-title">Alergenoen informazioa — UE 1169/2011 Erregelamendua</div>
+      <div class="allergen-legend-grid">
+        <div class="allergen-legend-item"><span class="dot"></span>Garia (zerealak)</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Krustazeak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Arrautzak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Arraina</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Kakahueteak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Soja</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Esnekiak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Fruitu lehorrak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Apoa</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Mostaza</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sesamo</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sulfitoak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Lupinuak</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Moluskuak</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===================== ENGLISH ===================== -->
+<div class="lang-content" id="lang-en">
+
+  <div class="cat-nav">
+    <button class="cat-nav-btn active" onclick="filterCat('en','all',this)">All</button>
+    <button class="cat-nav-btn" onclick="filterCat('en','pintxos',this)">Pintxos</button>
+    <button class="cat-nav-btn" onclick="filterCat('en','entrantes',this)">Starters</button>
+    <button class="cat-nav-btn" onclick="filterCat('en','principales',this)">Mains</button>
+    <button class="cat-nav-btn" onclick="filterCat('en','postres',this)">Desserts</button>
+    <button class="cat-nav-btn" onclick="filterCat('en','bebidas',this)">Drinks</button>
+  </div>
+
+  <main>
+
+    <div class="menu-section" data-cat="pintxos">
+      <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Salted cod pintxo with pil-pil</div>
+          <div class="item-desc">Confit cod on toasted bread with traditional pil-pil sauce</div>
+          <div class="item-allergens"><span>Fish</span><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Classic Gilda</div>
+          <div class="item-desc">Anchovy, chilli pepper and olive on a skewer — original Basque recipe</div>
+          <div class="item-allergens"><span>Fish</span></div>
+        </div>
+        <div class="item-price">2,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txistorra pintxo</div>
+          <div class="item-desc">Basque txistorra sausage grilled on rustic bread</div>
+          <div class="item-allergens"><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Garlic mushrooms</div>
+          <div class="item-desc">Mushrooms sautéed with garlic and parsley, gluten-free</div>
+          <div class="item-allergens"><span>No allergens</span></div>
+        </div>
+        <div class="item-price">3,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="entrantes">
+      <div class="section-header"><span class="section-title">Starters</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Seasonal salad</div>
+          <div class="item-desc">Local garden vegetables with txakoli wine vinaigrette</div>
+          <div class="item-allergens"><span>No allergens</span></div>
+        </div>
+        <div class="item-price">8,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Iberian ham croquettes</div>
+          <div class="item-desc">Homemade breaded croquettes with acorn-fed iberian ham</div>
+          <div class="item-allergens"><span>Gluten</span><span>Dairy</span><span>Eggs</span></div>
+        </div>
+        <div class="item-price">9,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Seared foie gras with apple</div>
+          <div class="item-desc">Duck foie gras with apple compote and brioche toast</div>
+          <div class="item-allergens"><span>Gluten</span><span>Dairy</span></div>
+        </div>
+        <div class="item-price">16,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="principales">
+      <div class="section-header"><span class="section-title">Main Courses</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Basque-style hake</div>
+          <div class="item-desc">Fresh hake in green sauce with clams and asparagus</div>
+          <div class="item-allergens"><span>Fish</span><span>Molluscs</span></div>
+        </div>
+        <div class="item-price">22,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txuleta beef chop</div>
+          <div class="item-desc">Grilled ox chop, minimum 1 kg, with Guernica peppers</div>
+          <div class="item-allergens"><span>No allergens</span></div>
+        </div>
+        <div class="item-price">38,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Kokotxas al pil-pil</div>
+          <div class="item-desc">Cod chin in pil-pil sauce, traditional recipe</div>
+          <div class="item-allergens"><span>Fish</span></div>
+        </div>
+        <div class="item-price">24,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Wild mushroom risotto</div>
+          <div class="item-desc">Seasonal mushrooms, parmesan, black truffle — vegetarian option</div>
+          <div class="item-allergens"><span>Dairy</span><span>Gluten</span></div>
+        </div>
+        <div class="item-price">18,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="postres">
+      <div class="section-header"><span class="section-title">Desserts</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Basque cake</div>
+          <div class="item-desc">Traditional pastel vasco with custard cream, grandmother's recipe</div>
+          <div class="item-allergens"><span>Gluten</span><span>Dairy</span><span>Eggs</span></div>
+        </div>
+        <div class="item-price">6,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Cuajada with honey</div>
+          <div class="item-desc">Artisan latxa sheep's curd with Bizkaia honey</div>
+          <div class="item-allergens"><span>Dairy</span></div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Chocolate fondant</div>
+          <div class="item-desc">Warm chocolate cake with molten centre and vanilla ice cream</div>
+          <div class="item-allergens"><span>Gluten</span><span>Dairy</span><span>Eggs</span></div>
+        </div>
+        <div class="item-price">7,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="bebidas">
+      <div class="section-header"><span class="section-title">Drinks</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Getariako Txakoli</div>
+          <div class="item-desc">White wine DO Getariako Txakolina, glass / bottle</div>
+          <div class="item-allergens"><span>Sulphites</span></div>
+        </div>
+        <div class="item-price">3,50 € / 18 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Natural cider</div>
+          <div class="item-desc">Artisan sagardoa from Gipuzkoa, traditionally poured</div>
+          <div class="item-allergens"><span>Sulphites</span></div>
+        </div>
+        <div class="item-price">2,80 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Still / Sparkling water</div>
+          <div class="item-desc">50cl bottle</div>
+          <div class="item-allergens"></div>
+        </div>
+        <div class="item-price">1,80 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Espresso / Cortado / Americano</div>
+          <div class="item-desc">Specialty single-origin coffee</div>
+          <div class="item-allergens"><span>Dairy</span></div>
+        </div>
+        <div class="item-price">1,80 €</div>
+      </div>
+    </div>
+
+    <div class="allergen-legend">
+      <div class="allergen-legend-title">Allergen information — EU Regulation 1169/2011</div>
+      <div class="allergen-legend-grid">
+        <div class="allergen-legend-item"><span class="dot"></span>Gluten (cereals)</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Crustaceans</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Eggs</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Fish</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Peanuts</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Soybeans</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Dairy</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Tree nuts</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Celery</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Mustard</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sesame</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sulphur dioxide</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Lupin</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Molluscs</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ===================== FRANÇAIS ===================== -->
+<div class="lang-content" id="lang-fr">
+
+  <div class="cat-nav">
+    <button class="cat-nav-btn active" onclick="filterCat('fr','all',this)">Tout</button>
+    <button class="cat-nav-btn" onclick="filterCat('fr','pintxos',this)">Pintxos</button>
+    <button class="cat-nav-btn" onclick="filterCat('fr','entrantes',this)">Entrées</button>
+    <button class="cat-nav-btn" onclick="filterCat('fr','principales',this)">Plats</button>
+    <button class="cat-nav-btn" onclick="filterCat('fr','postres',this)">Desserts</button>
+    <button class="cat-nav-btn" onclick="filterCat('fr','bebidas',this)">Boissons</button>
+  </div>
+
+  <main>
+
+    <div class="menu-section" data-cat="pintxos">
+      <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Pintxo de morue au pil-pil</div>
+          <div class="item-desc">Morue confite sur pain grillé avec sauce pil-pil traditionnelle</div>
+          <div class="item-allergens"><span>Poisson</span><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Gilda classique</div>
+          <div class="item-desc">Anchois, piment et olive en brochette — recette basque originale</div>
+          <div class="item-allergens"><span>Poisson</span></div>
+        </div>
+        <div class="item-price">2,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Pintxo de txistorra</div>
+          <div class="item-desc">Txistorra basque grillée sur pain de campagne</div>
+          <div class="item-allergens"><span>Gluten</span></div>
+        </div>
+        <div class="item-price">2,50 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="entrantes">
+      <div class="section-header"><span class="section-title">Entrées</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Salade de saison</div>
+          <div class="item-desc">Légumes du potager local avec vinaigrette au txakoli</div>
+          <div class="item-allergens"><span>Sans allergènes</span></div>
+        </div>
+        <div class="item-price">8,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Croquettes au jambon ibérique</div>
+          <div class="item-desc">Croquettes maison panées au jambon ibérique de bellota</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lait</span><span>Œufs</span></div>
+        </div>
+        <div class="item-price">9,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Foie gras poêlé à la pomme</div>
+          <div class="item-desc">Foie gras de canard avec compote de pomme et brioche</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lait</span></div>
+        </div>
+        <div class="item-price">16,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="principales">
+      <div class="section-header"><span class="section-title">Plats Principaux</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Merlu à la basquaise</div>
+          <div class="item-desc">Merlu frais en sauce verte avec palourdes et asperges</div>
+          <div class="item-allergens"><span>Poisson</span><span>Mollusques</span></div>
+        </div>
+        <div class="item-price">22,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txuleta de bœuf</div>
+          <div class="item-desc">Côte de bœuf grillée, minimum 1 kg, avec piments de Guernica</div>
+          <div class="item-allergens"><span>Sans allergènes</span></div>
+        </div>
+        <div class="item-price">38,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Kokotxas au pil-pil</div>
+          <div class="item-desc">Joues de morue en sauce pil-pil, recette traditionnelle</div>
+          <div class="item-allergens"><span>Poisson</span></div>
+        </div>
+        <div class="item-price">24,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="postres">
+      <div class="section-header"><span class="section-title">Desserts</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Gâteau basque</div>
+          <div class="item-desc">Pastel vasco à la crème pâtissière, recette de la grand-mère</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lait</span><span>Œufs</span></div>
+        </div>
+        <div class="item-price">6,00 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Cuajada au miel</div>
+          <div class="item-desc">Caillé artisanal de brebis latxa avec miel de Bizkaia</div>
+          <div class="item-allergens"><span>Lait</span></div>
+        </div>
+        <div class="item-price">5,50 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Fondant au chocolat</div>
+          <div class="item-desc">Gâteau au chocolat cœur coulant avec glace à la vanille</div>
+          <div class="item-allergens"><span>Gluten</span><span>Lait</span><span>Œufs</span></div>
+        </div>
+        <div class="item-price">7,00 €</div>
+      </div>
+    </div>
+
+    <div class="menu-section" data-cat="bebidas">
+      <div class="section-header"><span class="section-title">Boissons</span></div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Txakoli de Getaria</div>
+          <div class="item-desc">Vin blanc DO Getariako Txakolina, verre / bouteille</div>
+          <div class="item-allergens"><span>Sulfites</span></div>
+        </div>
+        <div class="item-price">3,50 € / 18 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Cidre naturel</div>
+          <div class="item-desc">Sagardoa artisanal de Gipuzkoa, versé à la manière traditionnelle</div>
+          <div class="item-allergens"><span>Sulfites</span></div>
+        </div>
+        <div class="item-price">2,80 €</div>
+      </div>
+      <div class="menu-item">
+        <div class="item-info">
+          <div class="item-name">Eau plate / gazeuse</div>
+          <div class="item-desc">Bouteille 50cl</div>
+          <div class="item-allergens"></div>
+        </div>
+        <div class="item-price">1,80 €</div>
+      </div>
+    </div>
+
+    <div class="allergen-legend">
+      <div class="allergen-legend-title">Informations allergènes — Règlement UE 1169/2011</div>
+      <div class="allergen-legend-grid">
+        <div class="allergen-legend-item"><span class="dot"></span>Gluten (céréales)</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Crustacés</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Œufs</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Poisson</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Arachides</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Soja</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Lait</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Fruits à coque</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Céleri</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Moutarde</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Sésame</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Dioxyde de soufre</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Lupin</div>
+        <div class="allergen-legend-item"><span class="dot"></span>Mollusques</div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<footer>
+  <span class="footer-name">Fortaleza · 1786</span>
+  Oiartzun · Gipuzkoa · País Vasco
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+    document.getElementById('lang-' + lang).classList.add('active');
+    document.querySelector(`.lang-btn[onclick="setLang('${lang}')"]`).classList.add('active');
+    document.documentElement.lang = lang;
+  }
+
+  function filterCat(lang, cat, btn) {
+    const container = document.getElementById('lang-' + lang);
+    container.querySelectorAll('.menu-section').forEach(sec => {
+      if (cat === 'all' || sec.dataset.cat === cat) {
+        sec.classList.remove('hidden');
+      } else {
+        sec.classList.add('hidden');
+      }
+    });
+    container.querySelectorAll('.cat-nav-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  }
+</script>
+
+</body>
+</html>
