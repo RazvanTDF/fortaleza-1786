@@ -26,79 +26,75 @@
   }
 
   /* HEADER */
-  header {
-    background: #2d2118;
-    color: #ffffff;
-    text-align: center;
-    padding: 3rem 1.5rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
+header {
+  background: #17100c;
+  color: #ffffff;
+  text-align: center;
+  padding: 3.2rem 1.5rem 2.6rem;
+  position: relative;
+  overflow: hidden;
+}
 
-  header::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 40px,
-      rgba(201,168,76,0.04) 40px,
-      rgba(201,168,76,0.04) 41px
-    );
-  }
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 40px,
+    rgba(201,168,76,0.03) 40px,
+    rgba(201,168,76,0.03) 41px
+  );
+}
 
-  .header-year {
-    font-family: 'Lexend Zetta', sans-serif;
-    font-size: clamp(3rem, 10vw, 6rem);
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    color: #ffffff;
-    margin-bottom: 0.2rem;
-    position: relative;
-    line-height: 1;
-  }
+.header-brand {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
 
-  .header-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
-    font-weight: 300;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    line-height: 1.6;
-    position: relative;
-    color: rgba(255,255,255,0.55);
-    margin-top: 0.6rem;
-  }
+.header-fortaleza {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 6vw, 4.3rem);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: #ffffff;
+  line-height: 1;
+}
 
-  .header-fortaleza {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.6rem, 5vw, 2.8rem);
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: 0.04em;
-    color: #ffffff;
-    position: relative;
-    display: block;
-    margin-top: 0.1rem;
-  }
+.header-year {
+  font-family: 'Lexend Zetta', sans-serif;
+  font-size: clamp(1.5rem, 3.8vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #e5e5e5;
+  line-height: 1;
+}
 
-  .header-location {
-    font-size: 0.75rem;
-    letter-spacing: 0.25em;
-    color: rgba(255,255,255,0.4);
-    text-transform: uppercase;
-    margin-top: 0.75rem;
-    position: relative;
-  }
+.header-name {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(0.78rem, 2vw, 0.95rem);
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.8;
+  position: relative;
+  color: rgba(255,255,255,0.72);
+  margin-top: 1rem;
+}
 
-  .header-divider {
-    width: 40px;
-    height: 1px;
-    background: var(--gold);
-    margin: 1.5rem auto 0;
-    position: relative;
-  }
+.header-divider {
+  width: 46px;
+  height: 1px;
+  background: var(--gold);
+  margin: 1.35rem auto 0;
+  position: relative;
+}
 
   /* LANG SWITCHER */
   .lang-bar {
@@ -322,10 +318,11 @@
 <body>
 
 <header>
-  <div class="header-year">1786</div>
-  <span class="header-fortaleza">Fortaleza</span>
-  <div class="header-name">Restaurante · Oiartzun</div>
-  <div class="header-location">Gipuzkoa · País Vasco · España</div>
+  <div class="header-brand">
+    <span class="header-fortaleza">Fortaleza</span>
+    <span class="header-year">1786</span>
+  </div>
+  <div class="header-name">Restaurante · Oiartzun · Gipuzkoa · País Vasco · España</div>
   <div class="header-divider"></div>
 </header>
 
