@@ -376,30 +376,29 @@
 </div>
 
 <!-- ===================== ESPAÑOL ===================== -->
+<!-- ===================== ES ===================== -->
 <div class="lang-content active" id="lang-es">
 
   <!-- SCHEDULE TOGGLE -->
   <div class="schedule-toggle-wrap">
     <div class="schedule-toggle">
       <button class="schedule-toggle-btn active" onclick="setSchedule('es','dias',this)">Todos los días</button>
-      <button class="schedule-toggle-btn" onclick="setSchedule('es','finde',this)">Fin de semana</button>
+      <button class="schedule-toggle-btn" onclick="setSchedule('es','finde',this)">Fin de semana (vie – dom)</button>
     </div>
   </div>
 
-  <!-- TODOS LOS DÍAS -->
+  <!-- TODOS LOS DÍAS / EGUNERO / EVERY DAY / TOUS LES JOURS -->
   <div class="schedule-content active" id="es-dias">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('es-dias','all',this)">Todo</button>
-      <button class="cat-nav-btn" onclick="filterCat('es-dias','pintxos',this)">Pintxos</button>
-      <button class="cat-nav-btn" onclick="filterCat('es-dias','entrantes',this)">Entrantes</button>
-      <button class="cat-nav-btn" onclick="filterCat('es-dias','principales',this)">Principales</button>
+      <button class="cat-nav-btn" onclick="filterCat('es-dias','para-picar',this)">Para Picar</button>
       <button class="cat-nav-btn" onclick="filterCat('es-dias','bocadillos',this)">Bocadillos</button>
       <button class="cat-nav-btn" onclick="filterCat('es-dias','hamburguesas',this)">Hamburguesas</button>
       <button class="cat-nav-btn" onclick="filterCat('es-dias','bebidas',this)">Bebidas</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Para Picar</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Pintxo de bacalao con pil-pil</div>
@@ -433,71 +432,6 @@
           <div class="item-price">3,00 €</div>
         </div>
       </div>
-
-      <div class="menu-section" data-cat="entrantes">
-        <div class="section-header"><span class="section-title">Entrantes</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Ensalada de temporada</div>
-            <div class="item-desc">Verduras de huerta local con vinagreta de txakoli</div>
-            <div class="item-allergens"><span>Sin alérgenos</span></div>
-          </div>
-          <div class="item-price">8,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Croquetas de jamón ibérico</div>
-            <div class="item-desc">Croquetas caseras, rebozadas, con jamón ibérico de bellota</div>
-            <div class="item-allergens"><span>Gluten</span><span>Lácteos</span><span>Huevos</span></div>
-          </div>
-          <div class="item-price">9,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Foie a la plancha con manzana</div>
-            <div class="item-desc">Foie gras de pato con compota de manzana y pan brioche</div>
-            <div class="item-allergens"><span>Gluten</span><span>Lácteos</span></div>
-          </div>
-          <div class="item-price">16,00 €</div>
-        </div>
-      </div>
-
-      <div class="menu-section" data-cat="principales">
-        <div class="section-header"><span class="section-title">Platos Principales</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Merluza a la vasca</div>
-            <div class="item-desc">Merluza fresca en salsa verde con almejas y espárragos</div>
-            <div class="item-allergens"><span>Pescado</span><span>Moluscos</span></div>
-          </div>
-          <div class="item-price">22,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Txuleta de buey</div>
-            <div class="item-desc">Chuletón de buey a la brasa, mínimo 1 kg, con pimientos de Guernica</div>
-            <div class="item-allergens"><span>Sin alérgenos</span></div>
-          </div>
-          <div class="item-price">38,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Kokotxas al pil-pil</div>
-            <div class="item-desc">Kokotxas de bacalao en salsa pil-pil, receta tradicional</div>
-            <div class="item-allergens"><span>Pescado</span></div>
-          </div>
-          <div class="item-price">24,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Risotto de setas del bosque</div>
-            <div class="item-desc">Setas de temporada, parmesano, trufa negra — opción vegetariana</div>
-            <div class="item-allergens"><span>Lácteos</span><span>Gluten</span></div>
-          </div>
-          <div class="item-price">18,00 €</div>
-        </div>
-      </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Bocadillos</span></div>
         <div class="menu-item">
@@ -525,7 +459,6 @@
           <div class="item-price">5,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Hamburguesas</span></div>
         <div class="menu-item">
@@ -553,7 +486,6 @@
           <div class="item-price">13,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Bebidas</span></div>
         <div class="menu-item">
@@ -589,7 +521,6 @@
           <div class="item-price">1,80 €</div>
         </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Información sobre alérgenos — Reglamento UE 1169/2011</div>
         <div class="allergen-legend-grid">
@@ -612,20 +543,20 @@
     </main>
   </div>
 
-  <!-- FIN DE SEMANA -->
+  <!-- FIN DE SEMANA / ASTEBURUA / WEEKEND / WEEK-END -->
   <div class="schedule-content" id="es-finde">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('es-finde','all',this)">Todo</button>
-      <button class="cat-nav-btn" onclick="filterCat('es-finde','pintxos',this)">Pintxos</button>
+      <button class="cat-nav-btn" onclick="filterCat('es-finde','para-picar',this)">Para Picar</button>
       <button class="cat-nav-btn" onclick="filterCat('es-finde','entrantes',this)">Entrantes</button>
-      <button class="cat-nav-btn" onclick="filterCat('es-finde','principales',this)">Principales</button>
+      <button class="cat-nav-btn" onclick="filterCat('es-finde','platos-principales',this)">Principales</button>
       <button class="cat-nav-btn" onclick="filterCat('es-finde','bocadillos',this)">Bocadillos</button>
       <button class="cat-nav-btn" onclick="filterCat('es-finde','hamburguesas',this)">Hamburguesas</button>
       <button class="cat-nav-btn" onclick="filterCat('es-finde','bebidas',this)">Bebidas</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Para Picar</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Pintxo de foie con reducción de Pedro Ximénez</div>
@@ -651,7 +582,6 @@
           <div class="item-price">4,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="entrantes">
         <div class="section-header"><span class="section-title">Entrantes</span></div>
         <div class="menu-item">
@@ -679,8 +609,7 @@
           <div class="item-price">16,00 €</div>
         </div>
       </div>
-
-      <div class="menu-section" data-cat="principales">
+      <div class="menu-section" data-cat="platos-principales">
         <div class="section-header"><span class="section-title">Platos Principales</span></div>
         <div class="menu-item">
           <div class="item-info">
@@ -715,7 +644,6 @@
           <div class="item-price">24,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Bocadillos</span></div>
         <div class="menu-item">
@@ -735,7 +663,6 @@
           <div class="item-price">9,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Hamburguesas</span></div>
         <div class="menu-item">
@@ -755,12 +682,11 @@
           <div class="item-price">19,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Bebidas</span></div>
         <div class="menu-item">
           <div class="item-info">
-            <div class="item-name">Txakoli de Getaria — Gran Reserva</div>
+            <div class="item-name">Txakoli Getariako — Gran Reserva</div>
             <div class="item-desc">DO Getariako Txakolina crianza en barrica, copa / botella</div>
             <div class="item-allergens"><span>Sulfitos</span></div>
           </div>
@@ -791,7 +717,6 @@
           <div class="item-price">1,80 €</div>
         </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Información sobre alérgenos — Reglamento UE 1169/2011</div>
         <div class="allergen-legend-grid">
@@ -816,30 +741,29 @@
 
 </div>
 
-<!-- ===================== EUSKARA ===================== -->
+<!-- ===================== EU ===================== -->
 <div class="lang-content" id="lang-eu">
 
+  <!-- SCHEDULE TOGGLE -->
   <div class="schedule-toggle-wrap">
     <div class="schedule-toggle">
       <button class="schedule-toggle-btn active" onclick="setSchedule('eu','dias',this)">Egunero</button>
-      <button class="schedule-toggle-btn" onclick="setSchedule('eu','finde',this)">Asteburua</button>
+      <button class="schedule-toggle-btn" onclick="setSchedule('eu','finde',this)">Asteburua (osk – igan)</button>
     </div>
   </div>
 
-  <!-- EGUNERO -->
+  <!-- TODOS LOS DÍAS / EGUNERO / EVERY DAY / TOUS LES JOURS -->
   <div class="schedule-content active" id="eu-dias">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('eu-dias','all',this)">Guztia</button>
-      <button class="cat-nav-btn" onclick="filterCat('eu-dias','pintxos',this)">Pintxoak</button>
-      <button class="cat-nav-btn" onclick="filterCat('eu-dias','entrantes',this)">Sarrerak</button>
-      <button class="cat-nav-btn" onclick="filterCat('eu-dias','principales',this)">Platerak</button>
+      <button class="cat-nav-btn" onclick="filterCat('eu-dias','para-picar',this)">Mokatzekoak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-dias','bocadillos',this)">Ogitartekoak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-dias','hamburguesas',this)">Hamburgesak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-dias','bebidas',this)">Edariak</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxoak</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Mokatzekoak</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Bakailao pintxoa pil-pilekin</div>
@@ -873,63 +797,6 @@
           <div class="item-price">3,00 €</div>
         </div>
       </div>
-
-      <div class="menu-section" data-cat="entrantes">
-        <div class="section-header"><span class="section-title">Sarrerak</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Denboraldiko entsalada</div>
-            <div class="item-desc">Bertako barazki freskoak txakoli binagretearekin</div>
-            <div class="item-allergens"><span>Alergenorik gabe</span></div>
-          </div>
-          <div class="item-price">8,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Urdaiazpiko kroketak</div>
-            <div class="item-desc">Etxeko kroketak urdaiazpiko iberikoaz beteak</div>
-            <div class="item-allergens"><span>Garia</span><span>Esnekiak</span><span>Arrautzak</span></div>
-          </div>
-          <div class="item-price">9,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Ahate foie-a sagarrarekin</div>
-            <div class="item-desc">Ahate foie grasa sagar konpotarekin eta brioche ogiarekin</div>
-            <div class="item-allergens"><span>Garia</span><span>Esnekiak</span></div>
-          </div>
-          <div class="item-price">16,00 €</div>
-        </div>
-      </div>
-
-      <div class="menu-section" data-cat="principales">
-        <div class="section-header"><span class="section-title">Plater Nagusiak</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Legatza euskal eran</div>
-            <div class="item-desc">Legatz freskoa saltsa berdean, txirlekin eta zainzuriekin</div>
-            <div class="item-allergens"><span>Arraina</span><span>Moluskuak</span></div>
-          </div>
-          <div class="item-price">22,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Idiskiaren txuleta</div>
-            <div class="item-desc">Brasatan egindako txuleta, gutxienez 1 kg, Gernikako piperrekin</div>
-            <div class="item-allergens"><span>Alergenorik gabe</span></div>
-          </div>
-          <div class="item-price">38,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Bakailaoko kokotxak pil-pilean</div>
-            <div class="item-desc">Kokotxak pil-pil saltsan, errezeta tradizionala</div>
-            <div class="item-allergens"><span>Arraina</span></div>
-          </div>
-          <div class="item-price">24,00 €</div>
-        </div>
-      </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Ogitartekoak</span></div>
         <div class="menu-item">
@@ -948,8 +815,15 @@
           </div>
           <div class="item-price">6,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Barazki ogitartekoa</div>
+            <div class="item-desc">Erreten barazkiak, rúkola eta berakatz beltza alioli</div>
+            <div class="item-allergens"><span>Garia</span><span>Arrautzak</span></div>
+          </div>
+          <div class="item-price">5,50 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Hamburgesak</span></div>
         <div class="menu-item">
@@ -968,8 +842,15 @@
           </div>
           <div class="item-price">15,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Hamburgesa begana</div>
+            <div class="item-desc">Erremolatxa eta lekadunak, aguakatea, tomate konfitua</div>
+            <div class="item-allergens"><span>Garia</span></div>
+          </div>
+          <div class="item-price">13,00 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Edariak</span></div>
         <div class="menu-item">
@@ -996,8 +877,15 @@
           </div>
           <div class="item-price">1,80 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Kafea / Cortado / Americano</div>
+            <div class="item-desc">Espezialitate kafea, jatorri bakarreko</div>
+            <div class="item-allergens"><span>Esnekiak</span></div>
+          </div>
+          <div class="item-price">1,80 €</div>
+        </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Alergenoen informazioa — UE 1169/2011 Erregelamendua</div>
         <div class="allergen-legend-grid">
@@ -1020,20 +908,20 @@
     </main>
   </div>
 
-  <!-- ASTEBURUA -->
+  <!-- FIN DE SEMANA / ASTEBURUA / WEEKEND / WEEK-END -->
   <div class="schedule-content" id="eu-finde">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('eu-finde','all',this)">Guztia</button>
-      <button class="cat-nav-btn" onclick="filterCat('eu-finde','pintxos',this)">Pintxoak</button>
+      <button class="cat-nav-btn" onclick="filterCat('eu-finde','para-picar',this)">Mokatzekoak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-finde','entrantes',this)">Sarrerak</button>
-      <button class="cat-nav-btn" onclick="filterCat('eu-finde','principales',this)">Platerak</button>
+      <button class="cat-nav-btn" onclick="filterCat('eu-finde','platos-principales',this)">Plater Nagusiak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-finde','bocadillos',this)">Ogitartekoak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-finde','hamburguesas',this)">Hamburgesak</button>
       <button class="cat-nav-btn" onclick="filterCat('eu-finde','bebidas',this)">Edariak</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxoak — Asteburu Berezia</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Mokatzekoak</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Foie pintxoa Pedro Ximénez murrizketan</div>
@@ -1050,8 +938,15 @@
           </div>
           <div class="item-price">3,50 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Izokinen eta aguakatearen pintxoa</div>
+            <div class="item-desc">Izoki marinatua, guakamole eta amuarrain arrautzak tostan gainean</div>
+            <div class="item-allergens"><span>Arraina</span><span>Garia</span></div>
+          </div>
+          <div class="item-price">4,00 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="entrantes">
         <div class="section-header"><span class="section-title">Sarrerak</span></div>
         <div class="menu-item">
@@ -1070,9 +965,16 @@
           </div>
           <div class="item-price">22,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Ahate foie-a sagarrarekin</div>
+            <div class="item-desc">Ahate foie grasa sagar konpotarekin eta brioche ogiarekin</div>
+            <div class="item-allergens"><span>Garia</span><span>Esnekiak</span></div>
+          </div>
+          <div class="item-price">16,00 €</div>
+        </div>
       </div>
-
-      <div class="menu-section" data-cat="principales">
+      <div class="menu-section" data-cat="platos-principales">
         <div class="section-header"><span class="section-title">Plater Nagusiak</span></div>
         <div class="menu-item">
           <div class="item-info">
@@ -1090,8 +992,23 @@
           </div>
           <div class="item-price">48,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Bakailaoko kokotxak trufarekin</div>
+            <div class="item-desc">Kokotxak pil-pil saltsan trufaren xaflaekin</div>
+            <div class="item-allergens"><span>Arraina</span></div>
+          </div>
+          <div class="item-price">28,00 €</div>
+        </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Txerri iberikoaren masailezurra</div>
+            <div class="item-desc">12 orduz brasatutako masailezurra patata puree eta ardo gorri saltsa</div>
+            <div class="item-allergens"><span>Esnekiak</span><span>Sulfitoak</span></div>
+          </div>
+          <div class="item-price">24,00 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Ogitartekoak</span></div>
         <div class="menu-item">
@@ -1102,8 +1019,15 @@
           </div>
           <div class="item-price">8,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Txuletaren ogitartekoa</div>
+            <div class="item-desc">Txuletaren xaflak, piper gorria eta berakatz maionesa</div>
+            <div class="item-allergens"><span>Garia</span><span>Arrautzak</span></div>
+          </div>
+          <div class="item-price">9,50 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Hamburgesak</span></div>
         <div class="menu-item">
@@ -1114,8 +1038,15 @@
           </div>
           <div class="item-price">18,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Txistorra eta foie hamburgesa</div>
+            <div class="item-desc">Euskal txistorra, foie mi-cuit, piper marmelada eta rúkola</div>
+            <div class="item-allergens"><span>Garia</span><span>Esnekiak</span></div>
+          </div>
+          <div class="item-price">19,00 €</div>
+        </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Edariak</span></div>
         <div class="menu-item">
@@ -1142,8 +1073,15 @@
           </div>
           <div class="item-price">3,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Ura / Ura gasarekin</div>
+            <div class="item-desc">50cl botila</div>
+            <div class="item-allergens"></div>
+          </div>
+          <div class="item-price">1,80 €</div>
+        </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Alergenoen informazioa — UE 1169/2011 Erregelamendua</div>
         <div class="allergen-legend-grid">
@@ -1168,30 +1106,29 @@
 
 </div>
 
-<!-- ===================== ENGLISH ===================== -->
+<!-- ===================== EN ===================== -->
 <div class="lang-content" id="lang-en">
 
+  <!-- SCHEDULE TOGGLE -->
   <div class="schedule-toggle-wrap">
     <div class="schedule-toggle">
       <button class="schedule-toggle-btn active" onclick="setSchedule('en','dias',this)">Every Day</button>
-      <button class="schedule-toggle-btn" onclick="setSchedule('en','finde',this)">Weekend</button>
+      <button class="schedule-toggle-btn" onclick="setSchedule('en','finde',this)">Weekend (Fri – Sun)</button>
     </div>
   </div>
 
-  <!-- EVERY DAY -->
+  <!-- TODOS LOS DÍAS / EGUNERO / EVERY DAY / TOUS LES JOURS -->
   <div class="schedule-content active" id="en-dias">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('en-dias','all',this)">All</button>
-      <button class="cat-nav-btn" onclick="filterCat('en-dias','pintxos',this)">Pintxos</button>
-      <button class="cat-nav-btn" onclick="filterCat('en-dias','entrantes',this)">Starters</button>
-      <button class="cat-nav-btn" onclick="filterCat('en-dias','principales',this)">Mains</button>
+      <button class="cat-nav-btn" onclick="filterCat('en-dias','para-picar',this)">Nibbles</button>
       <button class="cat-nav-btn" onclick="filterCat('en-dias','bocadillos',this)">Sandwiches</button>
       <button class="cat-nav-btn" onclick="filterCat('en-dias','hamburguesas',this)">Burgers</button>
       <button class="cat-nav-btn" onclick="filterCat('en-dias','bebidas',this)">Drinks</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Nibbles</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Salted cod pintxo with pil-pil</div>
@@ -1225,71 +1162,6 @@
           <div class="item-price">3,00 €</div>
         </div>
       </div>
-
-      <div class="menu-section" data-cat="entrantes">
-        <div class="section-header"><span class="section-title">Starters</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Seasonal salad</div>
-            <div class="item-desc">Local garden vegetables with txakoli wine vinaigrette</div>
-            <div class="item-allergens"><span>No allergens</span></div>
-          </div>
-          <div class="item-price">8,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Iberian ham croquettes</div>
-            <div class="item-desc">Homemade breaded croquettes with acorn-fed iberian ham</div>
-            <div class="item-allergens"><span>Gluten</span><span>Dairy</span><span>Eggs</span></div>
-          </div>
-          <div class="item-price">9,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Seared foie gras with apple</div>
-            <div class="item-desc">Duck foie gras with apple compote and brioche toast</div>
-            <div class="item-allergens"><span>Gluten</span><span>Dairy</span></div>
-          </div>
-          <div class="item-price">16,00 €</div>
-        </div>
-      </div>
-
-      <div class="menu-section" data-cat="principales">
-        <div class="section-header"><span class="section-title">Main Courses</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Basque-style hake</div>
-            <div class="item-desc">Fresh hake in green sauce with clams and asparagus</div>
-            <div class="item-allergens"><span>Fish</span><span>Molluscs</span></div>
-          </div>
-          <div class="item-price">22,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Txuleta beef chop</div>
-            <div class="item-desc">Grilled ox chop, minimum 1 kg, with Guernica peppers</div>
-            <div class="item-allergens"><span>No allergens</span></div>
-          </div>
-          <div class="item-price">38,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Kokotxas al pil-pil</div>
-            <div class="item-desc">Cod chin in pil-pil sauce, traditional recipe</div>
-            <div class="item-allergens"><span>Fish</span></div>
-          </div>
-          <div class="item-price">24,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Wild mushroom risotto</div>
-            <div class="item-desc">Seasonal mushrooms, parmesan, black truffle — vegetarian option</div>
-            <div class="item-allergens"><span>Dairy</span><span>Gluten</span></div>
-          </div>
-          <div class="item-price">18,00 €</div>
-        </div>
-      </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Sandwiches</span></div>
         <div class="menu-item">
@@ -1317,7 +1189,6 @@
           <div class="item-price">5,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Burgers</span></div>
         <div class="menu-item">
@@ -1345,7 +1216,6 @@
           <div class="item-price">13,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Drinks</span></div>
         <div class="menu-item">
@@ -1381,7 +1251,6 @@
           <div class="item-price">1,80 €</div>
         </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Allergen information — EU Regulation 1169/2011</div>
         <div class="allergen-legend-grid">
@@ -1404,20 +1273,20 @@
     </main>
   </div>
 
-  <!-- WEEKEND -->
+  <!-- FIN DE SEMANA / ASTEBURUA / WEEKEND / WEEK-END -->
   <div class="schedule-content" id="en-finde">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('en-finde','all',this)">All</button>
-      <button class="cat-nav-btn" onclick="filterCat('en-finde','pintxos',this)">Pintxos</button>
+      <button class="cat-nav-btn" onclick="filterCat('en-finde','para-picar',this)">Nibbles</button>
       <button class="cat-nav-btn" onclick="filterCat('en-finde','entrantes',this)">Starters</button>
-      <button class="cat-nav-btn" onclick="filterCat('en-finde','principales',this)">Mains</button>
+      <button class="cat-nav-btn" onclick="filterCat('en-finde','platos-principales',this)">Main Courses</button>
       <button class="cat-nav-btn" onclick="filterCat('en-finde','bocadillos',this)">Sandwiches</button>
       <button class="cat-nav-btn" onclick="filterCat('en-finde','hamburguesas',this)">Burgers</button>
       <button class="cat-nav-btn" onclick="filterCat('en-finde','bebidas',this)">Drinks</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Nibbles</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Foie pintxo with Pedro Ximénez</div>
@@ -1443,7 +1312,6 @@
           <div class="item-price">4,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="entrantes">
         <div class="section-header"><span class="section-title">Starters</span></div>
         <div class="menu-item">
@@ -1462,9 +1330,16 @@
           </div>
           <div class="item-price">22,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Seared foie gras with apple</div>
+            <div class="item-desc">Duck foie gras with apple compote and brioche toast</div>
+            <div class="item-allergens"><span>Gluten</span><span>Dairy</span></div>
+          </div>
+          <div class="item-price">16,00 €</div>
+        </div>
       </div>
-
-      <div class="menu-section" data-cat="principales">
+      <div class="menu-section" data-cat="platos-principales">
         <div class="section-header"><span class="section-title">Main Courses</span></div>
         <div class="menu-item">
           <div class="item-info">
@@ -1499,7 +1374,6 @@
           <div class="item-price">24,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Sandwiches</span></div>
         <div class="menu-item">
@@ -1519,7 +1393,6 @@
           <div class="item-price">9,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Burgers</span></div>
         <div class="menu-item">
@@ -1539,7 +1412,6 @@
           <div class="item-price">19,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Drinks</span></div>
         <div class="menu-item">
@@ -1575,7 +1447,6 @@
           <div class="item-price">1,80 €</div>
         </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Allergen information — EU Regulation 1169/2011</div>
         <div class="allergen-legend-grid">
@@ -1600,30 +1471,29 @@
 
 </div>
 
-<!-- ===================== FRANÇAIS ===================== -->
+<!-- ===================== FR ===================== -->
 <div class="lang-content" id="lang-fr">
 
+  <!-- SCHEDULE TOGGLE -->
   <div class="schedule-toggle-wrap">
     <div class="schedule-toggle">
       <button class="schedule-toggle-btn active" onclick="setSchedule('fr','dias',this)">Tous les jours</button>
-      <button class="schedule-toggle-btn" onclick="setSchedule('fr','finde',this)">Week-end</button>
+      <button class="schedule-toggle-btn" onclick="setSchedule('fr','finde',this)">Week-end (ven – dim)</button>
     </div>
   </div>
 
-  <!-- TOUS LES JOURS -->
+  <!-- TODOS LOS DÍAS / EGUNERO / EVERY DAY / TOUS LES JOURS -->
   <div class="schedule-content active" id="fr-dias">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('fr-dias','all',this)">Tout</button>
-      <button class="cat-nav-btn" onclick="filterCat('fr-dias','pintxos',this)">Pintxos</button>
-      <button class="cat-nav-btn" onclick="filterCat('fr-dias','entrantes',this)">Entrées</button>
-      <button class="cat-nav-btn" onclick="filterCat('fr-dias','principales',this)">Plats</button>
+      <button class="cat-nav-btn" onclick="filterCat('fr-dias','para-picar',this)">Pour Grignoter</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-dias','bocadillos',this)">Sandwichs</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-dias','hamburguesas',this)">Burgers</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-dias','bebidas',this)">Boissons</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Pour Grignoter</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Pintxo de morue au pil-pil</div>
@@ -1648,64 +1518,15 @@
           </div>
           <div class="item-price">2,50 €</div>
         </div>
-      </div>
-
-      <div class="menu-section" data-cat="entrantes">
-        <div class="section-header"><span class="section-title">Entrées</span></div>
         <div class="menu-item">
           <div class="item-info">
-            <div class="item-name">Salade de saison</div>
-            <div class="item-desc">Légumes du potager local avec vinaigrette au txakoli</div>
+            <div class="item-name">Champignons à l'ail</div>
+            <div class="item-desc">Champignons sautés à l'ail et au persil, sans gluten</div>
             <div class="item-allergens"><span>Sans allergènes</span></div>
           </div>
-          <div class="item-price">8,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Croquettes au jambon ibérique</div>
-            <div class="item-desc">Croquettes maison panées au jambon ibérique de bellota</div>
-            <div class="item-allergens"><span>Gluten</span><span>Lait</span><span>Œufs</span></div>
-          </div>
-          <div class="item-price">9,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Foie gras poêlé à la pomme</div>
-            <div class="item-desc">Foie gras de canard avec compote de pomme et brioche</div>
-            <div class="item-allergens"><span>Gluten</span><span>Lait</span></div>
-          </div>
-          <div class="item-price">16,00 €</div>
+          <div class="item-price">3,00 €</div>
         </div>
       </div>
-
-      <div class="menu-section" data-cat="principales">
-        <div class="section-header"><span class="section-title">Plats Principaux</span></div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Merlu à la basquaise</div>
-            <div class="item-desc">Merlu frais en sauce verte avec palourdes et asperges</div>
-            <div class="item-allergens"><span>Poisson</span><span>Mollusques</span></div>
-          </div>
-          <div class="item-price">22,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Txuleta de bœuf</div>
-            <div class="item-desc">Côte de bœuf grillée, minimum 1 kg, avec piments de Guernica</div>
-            <div class="item-allergens"><span>Sans allergènes</span></div>
-          </div>
-          <div class="item-price">38,00 €</div>
-        </div>
-        <div class="menu-item">
-          <div class="item-info">
-            <div class="item-name">Kokotxas au pil-pil</div>
-            <div class="item-desc">Joues de morue en sauce pil-pil, recette traditionnelle</div>
-            <div class="item-allergens"><span>Poisson</span></div>
-          </div>
-          <div class="item-price">24,00 €</div>
-        </div>
-      </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Sandwichs</span></div>
         <div class="menu-item">
@@ -1733,7 +1554,6 @@
           <div class="item-price">5,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Burgers</span></div>
         <div class="menu-item">
@@ -1761,7 +1581,6 @@
           <div class="item-price">13,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Boissons</span></div>
         <div class="menu-item">
@@ -1788,8 +1607,15 @@
           </div>
           <div class="item-price">1,80 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Café / Cortado / Américain</div>
+            <div class="item-desc">Café de spécialité, origine unique</div>
+            <div class="item-allergens"><span>Lait</span></div>
+          </div>
+          <div class="item-price">1,80 €</div>
+        </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Informations allergènes — Règlement UE 1169/2011</div>
         <div class="allergen-legend-grid">
@@ -1812,20 +1638,20 @@
     </main>
   </div>
 
-  <!-- WEEK-END -->
+  <!-- FIN DE SEMANA / ASTEBURUA / WEEKEND / WEEK-END -->
   <div class="schedule-content" id="fr-finde">
     <div class="cat-nav">
       <button class="cat-nav-btn active" onclick="filterCat('fr-finde','all',this)">Tout</button>
-      <button class="cat-nav-btn" onclick="filterCat('fr-finde','pintxos',this)">Pintxos</button>
+      <button class="cat-nav-btn" onclick="filterCat('fr-finde','para-picar',this)">Pour Grignoter</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-finde','entrantes',this)">Entrées</button>
-      <button class="cat-nav-btn" onclick="filterCat('fr-finde','principales',this)">Plats</button>
+      <button class="cat-nav-btn" onclick="filterCat('fr-finde','platos-principales',this)">Plats principaux</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-finde','bocadillos',this)">Sandwichs</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-finde','hamburguesas',this)">Burgers</button>
       <button class="cat-nav-btn" onclick="filterCat('fr-finde','bebidas',this)">Boissons</button>
     </div>
     <main>
-      <div class="menu-section" data-cat="pintxos">
-        <div class="section-header"><span class="section-title">Pintxos</span></div>
+      <div class="menu-section" data-cat="para-picar">
+        <div class="section-header"><span class="section-title">Pour Grignoter</span></div>
         <div class="menu-item">
           <div class="item-info">
             <div class="item-name">Pintxo de foie au Pedro Ximénez</div>
@@ -1851,7 +1677,6 @@
           <div class="item-price">4,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="entrantes">
         <div class="section-header"><span class="section-title">Entrées</span></div>
         <div class="menu-item">
@@ -1870,9 +1695,16 @@
           </div>
           <div class="item-price">22,00 €</div>
         </div>
+        <div class="menu-item">
+          <div class="item-info">
+            <div class="item-name">Foie gras poêlé à la pomme</div>
+            <div class="item-desc">Foie gras de canard avec compote de pomme et brioche</div>
+            <div class="item-allergens"><span>Gluten</span><span>Lait</span></div>
+          </div>
+          <div class="item-price">16,00 €</div>
+        </div>
       </div>
-
-      <div class="menu-section" data-cat="principales">
+      <div class="menu-section" data-cat="platos-principales">
         <div class="section-header"><span class="section-title">Plats Principaux</span></div>
         <div class="menu-item">
           <div class="item-info">
@@ -1907,7 +1739,6 @@
           <div class="item-price">24,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bocadillos">
         <div class="section-header"><span class="section-title">Sandwichs</span></div>
         <div class="menu-item">
@@ -1927,7 +1758,6 @@
           <div class="item-price">9,50 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="hamburguesas">
         <div class="section-header"><span class="section-title">Burgers</span></div>
         <div class="menu-item">
@@ -1947,7 +1777,6 @@
           <div class="item-price">19,00 €</div>
         </div>
       </div>
-
       <div class="menu-section" data-cat="bebidas">
         <div class="section-header"><span class="section-title">Boissons</span></div>
         <div class="menu-item">
@@ -1983,7 +1812,6 @@
           <div class="item-price">1,80 €</div>
         </div>
       </div>
-
       <div class="allergen-legend">
         <div class="allergen-legend-title">Informations allergènes — Règlement UE 1169/2011</div>
         <div class="allergen-legend-grid">
